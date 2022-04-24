@@ -10,7 +10,7 @@
 	- 違いはRequest::inputとInput::getが機能は同じだけどメソッド名が異なるくらい
 	
 ### Chapter9 テスト
-#### ユニットテスト
+#### 9-1.ユニットテスト
 - PHPUnitがPHPのデファクトスタンダードのテストフレームワーク
 - LaravelにはFeatureTestとUnitTestがある
 - テストメソッドとして実行する方法は2つ
@@ -20,3 +20,15 @@
 - `assertEqual`は値と期待値が一致するかの判定だけ、`assertSame`は型も含めて期待値と一致するかの判定
 - dataProvider利用時の配列のキーにテスト内容をせていするとテスト失敗時のエラーがわかりやすくなる
 - `例外のテストはやや怪しいので後で見返す`
+- 実行順
+	1. setUpBeforeClass
+	1. setUp
+	1. テストメソッド1
+	1. tearDown
+	1. setUp
+	1. テストメソッド2
+	1. tearDown
+	1. tearDownAfterClass
+- `phpuni.xml`でテストのディレクトリの変更や環境変数の変更が可能
+
+#### 9-2.データベーステスト
